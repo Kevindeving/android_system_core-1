@@ -43,7 +43,15 @@ ifeq ($(BOARD_USE_NO_DEVFS_SETUP),true)
 LOCAL_CFLAGS += -DNO_DEVFS_SETUP
 endif
 
+<<<<<<< HEAD
 SYSTEM_CORE_INIT_DEFINES := BOARD_CHARGING_MODE_BOOTING_LPM
+=======
+SYSTEM_CORE_INIT_DEFINES := BOARD_CHARGING_MODE_BOOTING_LPM \
+    BOARD_CHARGING_CMDLINE_NAME \
+    BOARD_CHARGING_CMDLINE_VALUE \
+    BOARD_LPM_BOOT_ARGUMENT_NAME \
+    BOARD_LPM_BOOT_ARGUMENT_VALUE
+>>>>>>> b3508d2... init: Allow load of lpm.rc by parsing a cmdline argument
 
 $(foreach system_core_init_define,$(SYSTEM_CORE_INIT_DEFINES), \
   $(if $($(system_core_init_define)), \
